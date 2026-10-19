@@ -1,5 +1,7 @@
 """Synthetic identity generator with persistent uniqueness guarantees."""
 
+from __future__ import annotations
+
 import re
 import secrets
 import string

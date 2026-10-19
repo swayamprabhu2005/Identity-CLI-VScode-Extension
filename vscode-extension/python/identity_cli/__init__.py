@@ -1,6 +1,6 @@
 """Identity CLI: A clean CLI utility for generating synthetic identities with persistent uniqueness."""
 
-__version__ = "0.1.0"
+__version__ = "0.1.2"
 
 from identity_cli.models import Identity
 

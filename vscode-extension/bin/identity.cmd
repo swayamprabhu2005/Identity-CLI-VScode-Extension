@@ -28,8 +28,9 @@ where python.exe >nul 2>nul
 if %ERRORLEVEL% equ 0 (
     python.exe -c "import faker, openpyxl, rich, typer" >nul 2>nul
     if %ERRORLEVEL% neq 0 (
-        echo [Identity Generator] First-time setup: installing required dependencies (faker, openpyxl, rich, typer)...
-        python.exe -m pip install --quiet faker openpyxl rich typer
+        echo [Identity Generator] First-time setup: installing required dependencies: faker, openpyxl, rich, typer...
+        echo [Identity Generator] Please wait while packages are installed via pip...
+        python.exe -m pip install --user faker openpyxl rich typer
     )
     python.exe -m identity_cli.cli %*
     exit /b %ERRORLEVEL%
@@ -40,13 +41,14 @@ where py.exe >nul 2>nul
 if %ERRORLEVEL% equ 0 (
     py.exe -c "import faker, openpyxl, rich, typer" >nul 2>nul
     if %ERRORLEVEL% neq 0 (
-        echo [Identity Generator] First-time setup: installing required dependencies (faker, openpyxl, rich, typer)...
-        py.exe -m pip install --quiet faker openpyxl rich typer
+        echo [Identity Generator] First-time setup: installing required dependencies: faker, openpyxl, rich, typer...
+        echo [Identity Generator] Please wait while packages are installed via pip...
+        py.exe -m pip install --user faker openpyxl rich typer
     )
     py.exe -m identity_cli.cli %*
     exit /b %ERRORLEVEL%
 )
 
 echo [Identity Generator] Error: Python or identity executable could not be found.
-echo Please ensure Python 3.10+ is installed on your system.
+echo Please ensure Python 3.8+ is installed on your system.
 exit /b 1

@@ -2,6 +2,14 @@
 
 All notable changes to the "Identity Generator" extension will be documented in this file.
 
+## [0.1.2] - 2026-10-20
+
+### Fixed
+- Fixed batch terminal launcher syntax error (`... was unexpected at this time`) on Windows.
+- Added `--user` flag to pip dependency installation to support non-administrator environments.
+- Added clear progress messages during first-time dependency installation.
+- Added Python 3.8 and 3.9 type annotation compatibility (`from __future__ import annotations`).
+
 ## [0.1.1] - 2026-10-02
 
 ### Added

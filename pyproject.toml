@@ -4,11 +4,11 @@ build-backend = "hatchling.build"
 
 [project]
 name = "identity-cli"
-version = "0.1.0"
+version = "0.1.2"
 description = "A clean CLI utility for generating synthetic identities with persistent uniqueness guarantees."
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.10"
+requires-python = ">=3.8"
 authors = [
     { name = "Developer" }
 ]

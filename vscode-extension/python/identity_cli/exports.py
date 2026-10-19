@@ -1,5 +1,7 @@
 """Export functionality for Identity CLI (Excel, JSON, CSV)."""
 
+from __future__ import annotations
+
 import csv
 import json
 from pathlib import Path

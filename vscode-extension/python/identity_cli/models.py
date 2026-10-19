@@ -1,5 +1,7 @@
 """Data models for Identity CLI."""
 
+from __future__ import annotations
+
 from dataclasses import dataclass
 import json
 from typing import Any, Dict, Optional

@@ -12,9 +12,10 @@ from identity_cli.storage import StorageManager
 
 
 def test_cli_version(cli_runner: CliRunner) -> None:
+    from identity_cli import __version__
     result = cli_runner.invoke(app, ["--version"])
     assert result.exit_code == 0
-    assert "Identity CLI v0.1.0" in result.output
+    assert f"Identity CLI v{__version__}" in result.output
 
 
 def test_cli_help(cli_runner: CliRunner) -> None:

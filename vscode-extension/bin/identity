@@ -20,19 +20,22 @@ fi
 # 3. Try running via python3 / python
 if command -v python3 &>/dev/null; then
     if ! python3 -c "import faker, openpyxl, rich, typer" &>/dev/null; then
-        echo "[Identity Generator] First-time setup: installing required dependencies (faker, openpyxl, rich, typer)..."
-        python3 -m pip install --quiet faker openpyxl rich typer
+        echo "[Identity Generator] First-time setup: installing required dependencies: faker, openpyxl, rich, typer..."
+        echo "[Identity Generator] Please wait while packages are installed via pip..."
+        python3 -m pip install --user faker openpyxl rich typer
     fi
     exec python3 -m identity_cli.cli "$@"
 fi
 
 if command -v python &>/dev/null; then
     if ! python -c "import faker, openpyxl, rich, typer" &>/dev/null; then
-        echo "[Identity Generator] First-time setup: installing required dependencies (faker, openpyxl, rich, typer)..."
-        python -m pip install --quiet faker openpyxl rich typer
+        echo "[Identity Generator] First-time setup: installing required dependencies: faker, openpyxl, rich, typer..."
+        echo "[Identity Generator] Please wait while packages are installed via pip..."
+        python -m pip install --user faker openpyxl rich typer
     fi
     exec python -m identity_cli.cli "$@"
 fi
 
 echo "[Identity Generator] Error: Neither python3 nor identity executable was found." >&2
+echo "Please ensure Python 3.8+ is installed on your system." >&2
 exit 1
